@@ -35,7 +35,6 @@ export async function GET(request: Request) {
         await client.connect();
         db = await client.db(`${process.env.MONGO_DB}`);
         col = db.collection(`${process.env.MONGO_COLLECTION}`);
-        console.log('Connected successfully to server');
         const data = (await col.find({ productName: `${name}`}).toArray());
         return data[0];
     } catch (err) {
@@ -43,6 +42,5 @@ export async function GET(request: Request) {
     }
   }
   const data = await getProduct(name!)
-  console.log(data!.quantity)
   return new NextResponse(data!.quantity)
 };
