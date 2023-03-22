@@ -29,7 +29,7 @@ export async function GET(request: Request) {
 
   const getProduct = async (name: string) => {
     const client: mongoDB.MongoClient = new mongoDB.MongoClient(
-      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@hackdayidea.bdc1jdl.mongodb.net/?retryWrites=true&w=majority`,
+      `${process.env.MONGODB_URI}`,
     );
     try {
         await client.connect();
