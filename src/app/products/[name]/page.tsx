@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 const getData = async (name: string) => {
-  const data = await fetch(`${process.env.FETCH_URL}/api/hello?name=${name}`,
+  const data = await fetch(`${process.env.FETCH_URL}`,
   {cache: 'no-store'});
   const response = await data.json()
   return response;
