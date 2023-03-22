@@ -42,5 +42,5 @@ export async function GET(request: Request) {
     }
   }
   const data = await getProduct(name!)
-  return new NextResponse(data!.quantity)
+  return NextResponse.json(data)
 };
